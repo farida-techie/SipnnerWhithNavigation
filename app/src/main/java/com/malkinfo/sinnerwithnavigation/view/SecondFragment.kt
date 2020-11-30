@@ -6,8 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.malkinfo.sinnerwithnavigation.R
+import kotlinx.android.synthetic.main.fragment_first.*
+import kotlinx.android.synthetic.main.fragment_second.*
 
 class SecondFragment : Fragment() {
+    private lateinit var name:String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -19,7 +22,10 @@ class SecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        arguments.let {
+            name = FirstFragmentArgs.fromBundle(it!!).urseNa
+            tvName0.text = name
+        }
     }
 
 

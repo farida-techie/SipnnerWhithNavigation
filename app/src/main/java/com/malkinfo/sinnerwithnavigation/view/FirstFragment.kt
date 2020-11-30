@@ -7,11 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.malkinfo.sinnerwithnavigation.R
+import kotlinx.android.synthetic.main.fragment_first.*
 
 
 class FirstFragment : Fragment() {
 
-
+private lateinit var name:String
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -22,8 +23,12 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        arguments.let {
+            name = FirstFragmentArgs.fromBundle(it!!).urseNa
+            tvName.text = name
+        }
     }
+
 
 
 }
