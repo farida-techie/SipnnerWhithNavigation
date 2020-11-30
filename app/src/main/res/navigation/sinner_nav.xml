@@ -1,5 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/sinner_nav">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sinner_nav"
+    app:startDestination="@id/mainFragment">
 
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.malkinfo.sinnerwithnavigation.view.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/gotoFirstFra"
+            app:destination="@id/firstFragment" />
+        <action
+            android:id="@+id/gotosecondFrag"
+            app:destination="@id/secondFragment" />
+        <action
+            android:id="@+id/gotoThirdFrag"
+            app:destination="@id/thirdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.malkinfo.sinnerwithnavigation.view.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" >
+        <argument
+            android:name="urseNa"
+            android:defaultValue=""
+            app:argType="string"
+            />
+        <action
+            android:id="@+id/gotoMainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.malkinfo.sinnerwithnavigation.view.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second">
+        <argument
+            android:name="urseNa"
+            android:defaultValue=""
+            app:argType="string"
+            />
+        <action
+            android:id="@+id/acSecondFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.malkinfo.sinnerwithnavigation.view.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" >
+        <argument
+            android:name="urseNa"
+            android:defaultValue=""
+            app:argType="string"
+            />
+        <action
+            android:id="@+id/acThirdFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 </navigation>
